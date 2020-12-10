@@ -9,6 +9,13 @@
     - Bidirectional Streaming 
 
 
+### Metadata 
+it located under `call.metadata` property
+
+### Request Data
+all the request is is located under `call.request` property 
+
+
 
 ## Need to learn about openSSL 
 It's a opensource command line tool to generate ssl / TSL certificate. 
