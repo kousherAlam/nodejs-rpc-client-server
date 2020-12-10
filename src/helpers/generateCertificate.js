@@ -14,4 +14,12 @@ const generateCertifcate = () => {
     return credential;
 };
 
-module.exports = { generateCertifcate };
+const generateClientCertifcate = () => {
+    const cacert = fs.readFileSync(path.join(__dirname, "..", "..", "cert", "ca.crt")),
+        cert = fs.readFileSync(path.join(__dirname, "..", "..", "cert", "client.crt")),
+        key = fs.readFileSync(path.join(__dirname, "..", "..", "cert", "client.key"));
+    const credential = grpc.credentials.createSsl(cacert, key, cert);
+    return credential;
+};
+
+module.exports = { generateCertifcate, generateClientCertifcate };

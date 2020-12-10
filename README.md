@@ -17,6 +17,9 @@ all the request is is located under `call.request` property
 
 
 
+## Interecting with Database Entity 
+
+
 ## Need to learn about openSSL 
 It's a opensource command line tool to generate ssl / TSL certificate. 
 
