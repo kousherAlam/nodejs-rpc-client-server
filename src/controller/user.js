@@ -1,11 +1,12 @@
 const user = require('../data/User');
 
 const getUser = (call, callback) => { 
+    console.log('in server getUser method is called.');
     const md = call.metadata.getMap();
     for(let key in md){
         console.log(key, md[key]);
     }
-    callback('error');
+    callback(null, 'data');
 };
 
 

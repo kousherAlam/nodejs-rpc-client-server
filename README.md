@@ -9,6 +9,20 @@
     - Bidirectional Streaming 
 
 
+
+# Clone the repository to get the example code
+$ git clone -b v1.34.0 https://github.com/grpc/grpc
+# Navigate to the dynamic codegen "hello, world" Node example:
+$ cd grpc/examples/node/dynamic_codegen
+# Install the example's dependencies
+$ npm install
+
+Run the server:
+$ node greeter_server.js
+From another terminal, run the client:
+$ node greeter_client.js
+
+
 ### Metadata 
 it located under `call.metadata` property
 

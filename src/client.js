@@ -10,8 +10,9 @@ const sendMetaData = (client) => {
     md.add('username', 'kousher alam');
     md.add('password', 'password1');
 
-    client.getUser({}, md, (data)=>{
+    client.getUser({name: 'kousher'}, (err, data)=>{
         console.log(data);
+        console.error(err);
     });
 };
 
@@ -22,24 +23,19 @@ const main = () => {
 
     // console.log(serviceDef);
 
-    const serverURL = `0.0.0.0:${configs.PORT}`;
+    const serverURL = `https://0.0.0.0:${configs.PORT}`;
     console.log('serverURL: ',serverURL);
 
     const client = new serviceDef.UserService(serverURL, generateClientCertifcate());
     
     const option = parseInt(process.argv[2], 10);
-    const md = new grpc.Metadata();
-    md.add('username', 'kousher alam');
-    md.add('password', 'password1');
-    client.getUser({}, md, (data)=>{
-        console.log('test data.');
-    });
-    // switch (option) {
-    //     case 1: 
-    //         sendMetaData(client);
-    //         break;
 
-    // }
+    switch (option) {
+        case 1: 
+            sendMetaData(client);
+            break;
+
+    }
 };
 
 main();
