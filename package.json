@@ -1,0 +1,15 @@
+{
+  "name": "grpc-nodejs-procol-buffer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kousher alam",
+  "license": "ISC",
+  "dependencies": {
+    "grpc": "^1.24.4"
+  }
+}
