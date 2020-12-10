@@ -1,0 +1,45 @@
+ syntax = "proto3";
+
+message User{
+    uint32 id = 1;
+    string name = 2;
+    string email = 3;
+    string password = 4;
+    string confirm_password = 5;
+
+}
+
+message GetAllRequest {}
+message GetAllResponse {
+    repeated User user = 1;
+}
+
+message GetUserRequest {
+    uint32 id = 1;
+}
+message GetUserResponse {
+    User user = 1;
+}
+
+message SaveUserRequest {
+    User user = 1;
+}
+message SaveUserResponse {
+    bool isOk = 1;
+}
+
+message AddPhotoRequest{
+    bytes data = 1;
+}
+
+message AddPhotoResponse{
+    bool isOk = 1;
+}
+
+service UserService{
+    rpc GetUser (GetUserRequest) returns (GetUserResponse);
+    rpc GetAllUser (GetAllRequest) returns (stream GetAllResponse);
+    rpc SaveUser (SaveUserRequest) returns (SaveUserResponse);
+    rpc SaveAllUser (stream SaveUserRequest) returns ( stream SaveUserResponse);
+    rpc AddPhoto (stream AddPhotoRequest) returns (AddPhotoResponse);
+}
